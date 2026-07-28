@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MY PORTOFOLIO | Software Engineer Portfolio (HTML, CSS & JS)</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            outfit: ['Outfit', 'sans-serif'],
+            space: ['Space Grotesk', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[#07070a] text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-black min-h-screen overflow-x-hidden relative">
+
+  <!-- Square Grid Background Pattern -->
+  <div clas<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+
+    <!-- Grid -->
+    <div class="grid-background"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+</div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-amber-500/10 blur-[150px] rounded-full"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#07070a]/80 backdrop-blur-md border-b border-amber-500/20 py-4" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 flex items-center justify-center text-black font-bold text-lg shadow-[0_0_20px_rgba(212,175,55,0.4)] border border-amber-300">
+          👑
+        </div>
+        <div>
+          <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider gold-gradient-text block leading-none">
+            MY PORTOFOLIO
+          </span>
+          <span class="text-[10px] tracking-widest text-slate-400 font-mono uppercase block">
+            TAQII • RPL
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#home" class="hover:text-amber-300 transition-colors">Beranda</a>
+        <a href="#about" class="hover:text-amber-300 transition-colors">Tentang</a>
+        <a href="#skills" class="hover:text-amber-300 transition-colors">Keahlian</a>
+        <a href="#projects" class="hover:text-amber-300 transition-colors">Portofolio</a>
+        <a href="#experience" class="hover:text-amber-300 transition-colors">Pengalaman</a>
+        <a href="#certificates" class="hover:text-amber-300 transition-colors">Sertifikat</a>
+        <a href="#contact" class="hover:text-amber-300 transition-colors">Kontak</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 text-black hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+          Hubungi Utusan
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-white/5 border border-amber-500/30 text-amber-300">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Menu Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0f] border-b border-amber-500/20 px-4 py-4 space-y-3">
+      <a href="#home" class="block py-1 hover:text-amber-300">Beranda</a>
+      <a href="#about" class="block py-1 hover:text-amber-300">Tentang</a>
+      <a href="#skills" class="block py-1 hover:text-amber-300">Keahlian</a>
+      <a href="#projects" class="block py-1 hover:text-amber-300">Portofolio</a>
+      <a href="#experience" class="block py-1 hover:text-amber-300">Pengalaman</a>
+      <a href="#certificates" class="block py-1 hover:text-amber-300">Sertifikat</a>
+      <a href="#contact" class="block py-1 hover:text-amber-300">Kontak</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="min-h-screen pt-28 sm:pt-36 pb-20 flex flex-col justify-center relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      
+      <!-- Top Royal Crest -->
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-amber-500/10 via-yellow-500/20 to-amber-500/10 border-2 border-amber-400/40 text-amber-300 text-xs sm:text-sm font-semibold tracking-widest uppercase shadow-[0_0_25px_rgba(212,175,55,0.25)] animate-pulse">
+          <span>⚜️</span>
+          <span class="font-cinzel">KERATON SOFTWARE & REKAYASA</span>
+          <span>⚜️</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- LEFT: Hero Text Content -->
+        <div class="lg:col-span-7 order-2 lg:order-1 space-y-6 text-center lg:text-left">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400/90 mb-2 font-semibold">
+              👑 <span>MY PORTOFOLIO • SOFTWARE ENGINEER</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-100 font-cinzel leading-tight">
+              perkenalkan saya <br />
+              <span class="gold-gradient-text drop-shadow-[0_4px_16px_rgba(212,175,55,0.4)]">
+                muhammad taqiyuddin al fatih
+              </span>
+            </h1>
+
+            <p class="text-lg sm:text-2xl font-space font-semibold text-amber-200/90 mt-2">
+              Siswa Rekayasa Perangkat Lunak (RPL) SMK krian 1
+            </p>
+          </div>
+
+          <!-- Typewriter Effect -->
+          <div class="h-10 flex items-center justify-center lg:justify-start">
+            <span class="text-lg sm:text-xl font-mono text-amber-400 font-bold flex items-center gap-2 px-4 py-1.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+              ⚡ <span id="typewriter">Full-Stack Web Developer</span>
+              <span class="w-2 h-5 bg-amber-300 animate-pulse inline-block"></span>
+            </span>
+          </div>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
+            saya adalah seorang siswa yang berjuang dan belajar untuk mengubah dunia
+            hanya seorang siswa yang ingin mengguncang dunia
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#contact" class="px-8 py-3.5 rounded-full font-bold text-sm bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 text-black hover:brightness-110 transition-all shadow-[0_0_30px_rgba(212,175,55,0.45)] flex items-center gap-2.5">
+              <span>Unduh CV Imperial</span>
+            </a>
+            <a href="#projects" class="px-7 py-3.5 rounded-full font-bold text-sm bg-white/5 border-2 border-amber-500/40 text-slate-100 hover:text-amber-300 hover:bg-amber-500/15 transition-all">
+              <span>Silsilah Project</span>
+            </a>
+            <a href="#contact" class="px-6 py-3.5 rounded-full font-bold text-sm bg-white/5 border border-white/10 text-slate-300 hover:text-white transition-all">
+              <span>Kontak Utusan</span>
+            </a>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-6 border-t border-amber-500/20">
+            <div class="royal-glass p-3.5 rounded-2xl text-center border border-amber-500/20">
+              <span class="text-2xl sm:text-3xl font-bold font-space gold-gradient-text block">12+</span>
+              <span class="text-[11px] text-slate-400 font-medium uppercase tracking-wider block mt-0.5">Karya Project</span>
+            </div>
+            <div class="royal-glass p-3.5 rounded-2xl text-center border border-amber-500/20">
+              <span class="text-2xl sm:text-3xl font-bold font-space gold-gradient-text block">16+</span>
+              <span class="text-[11px] text-slate-400 font-medium uppercase tracking-wider block mt-0.5">Keahlian RPL</span>
+            </div>
+            <div class="royal-glass p-3.5 rounded-2xl text-center border border-amber-500/20">
+              <span class="text-2xl sm:text-3xl font-bold font-space gold-gradient-text block">5</span>
+              <span class="text-[11px] text-slate-400 font-medium uppercase tracking-wider block mt-0.5">Sertifikat</span>
+            </div>
+            <div class="royal-glass p-3.5 rounded-2xl text-center border border-amber-500/20">
+              <span class="text-2xl sm:text-3xl font-bold font-space gold-gradient-text block">3 Th</span>
+              <span class="text-[11px] text-slate-400 font-medium uppercase tracking-wider block mt-0.5">Rekam Jejak</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Photo Frame with Royal Gradient Vignette ("Foto di Sebelah Kanan & Foto Gradasi") -->
+        <div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
+          <div class="relative group max-w-sm sm:max-w-md w-full">
+            
+            <div class="absolute -inset-2 bg-gradient-to-tr from-amber-600 via-yellow-400 to-amber-700 rounded-3xl blur-2xl opacity-50"></div>
+
+            <div class="relative royal-glass p-4 sm:p-5 rounded-3xl border-2 border-amber-400/60 shadow-[0_0_50px_rgba(212,175,55,0.3)] bg-[#0c0c14]/90">
+              
+              <!-- Photo Image with Gradient Vignette Mask -->
+              <div class="relative aspect-[4/5] rounded-2xl overflow-hidden border-2 border-amber-400/40 bg-gradient-to-b from-[#12121a] to-[#070709] shadow-[inset_0_0_40px_rgba(212,175,55,0.35)]">
+                <img
+                  src="https://j.top4top.io/p_3861kwxg51.jpeg"
+                  alt="Aura Royal Putra"
+                  class="w-full h-full object-cover object-center filter brightness-105 contrast-105"
+                />
+
+                <!-- Multi-Layer Royal Gold & Deep Obsidian Gradient Vignette -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-amber-500/15 pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-amber-500/20 via-transparent to-[#070709]/95 pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#070709]/40 via-transparent to-[#070709]/40 pointer-events-none"></div>
+                <div class="absolute inset-0 shadow-[inset_0_0_50px_rgba(212,175,55,0.45)] pointer-events-none"></div>
+
+                <!-- Glass Overlay at Bottom -->
+                <div class="absolute bottom-3 left-3 right-3 bg-[#0a0a0f]/90 backdrop-blur-md p-3.5 rounded-xl border border-amber-400/40 flex items-center justify-between shadow-lg">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    <div>
+                      <span class="text-xs font-bold text-slate-100 block leading-none">ready to change the world </span>
+                      <span class="text-[10px] text-amber-300/80 font-mono">Software Engineer RPL</span>
+                    </div>
+                  </div>
+                  <span class="text-xs font-bold font-mono text-amber-300 px-2.5 py-1 rounded-lg bg-amber-500/20 border border-amber-400/40">
+                    ⚜️ Siswa
+                  </span>
+                </div>
+              </div>
+
+              <!-- Corner Crest Filigrees -->
+              <div class="absolute top-2 left-2 text-amber-400/80 text-sm select-none">⚜️</div>
+              <div class="absolute top-2 right-2 text-amber-400/80 text-sm select-none">⚜️</div>
+              <div class="absolute bottom-2 left-2 text-amber-400/80 text-sm select-none">⚜️</div>
+              <div class="absolute bottom-2 right-2 text-amber-400/80 text-sm select-none">⚜️</div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-24 relative border-t border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">MY Biography</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-cinzel text-slate-100 mt-2">Tentang Saya</h2>
+        <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="royal-glass p-8 rounded-3xl border border-amber-500/20 hover:border-amber-400/50 transition-all">
+          <div class="text-3xl mb-4">🏛️</div>
+          <h3 class="text-xl font-bold font-cinzel text-amber-300 mb-2">Pendidikan RPL</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Menempuh pendidikan keahlian Rekayasa Perangkat Lunak di SMK dengan fokus utama pada pemrograman web modern, struktur data, dan rekayasa lunak standar industri.
+          </p>
+        </div>
+
+        <div class="royal-glass p-8 rounded-3xl border border-amber-500/20 hover:border-amber-400/50 transition-all">
+          <div class="text-3xl mb-4">💻</div>
+          <h3 class="text-xl font-bold font-cinzel text-amber-300 mb-2">Stack & Teknologi</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Ahli menggunakan TypeScript, React, Tailwind CSS, Node.js, Express, MySQL/PostgreSQL, serta integrasi REST API & AI Gemini secara handal.
+          </p>
+        </div>
+
+        <div class="royal-glass p-8 rounded-3xl border border-amber-500/20 hover:border-amber-400/50 transition-all">
+          <div class="text-3xl mb-4">⚔️</div>
+          <h3 class="text-xl font-bold font-cinzel text-amber-300 mb-2">Visi & Komitmen</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Berkomitmen menciptakan produk digital yang presisi, performan tinggi, dan ramah pengguna, siap ditempatkan untuk proyek tim mapan maupun magang PKL.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="py-24 relative border-t border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">Armada Teknologi</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-cinzel text-slate-100 mt-2">Matriks Keahlian & Spesialisasi</h2>
+        <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="royal-glass p-6 rounded-2xl border border-amber-500/20">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-amber-300">Frontend React & Next.js</span>
+            <span class="text-xs font-mono text-amber-400">92%</span>
+          </div>
+          <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="h-full gold-gradient-bg rounded-full" style="width: 92%"></div>
+          </div>
+        </div>
+
+        <div class="royal-glass p-6 rounded-2xl border border-amber-500/20">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-amber-300">TypeScript & JavaScript</span>
+            <span class="text-xs font-mono text-amber-400">90%</span>
+          </div>
+          <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="h-full gold-gradient-bg rounded-full" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="royal-glass p-6 rounded-2xl border border-amber-500/20">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-amber-300">Tailwind CSS & Styling</span>
+            <span class="text-xs font-mono text-amber-400">95%</span>
+          </div>
+          <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="h-full gold-gradient-bg rounded-full" style="width: 95%"></div>
+          </div>
+        </div>
+
+        <div class="royal-glass p-6 rounded-2xl border border-amber-500/20">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-amber-300">Node.js & Express API</span>
+            <span class="text-xs font-mono text-amber-400">88%</span>
+          </div>
+          <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="h-full gold-gradient-bg rounded-full" style="width: 88%"></div>
+          </div>
+        </div>
+
+        <div class="royal-glass p-6 rounded-2xl border border-amber-500/20">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-amber-300">MySQL & PostgreSQL</span>
+            <span class="text-xs font-mono text-amber-400">85%</span>
+          </div>
+          <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="h-full gold-gradient-bg rounded-full" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="royal-glass p-6 rounded-2xl border border-amber-500/20">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-amber-300">Git & Version Control</span>
+            <span class="text-xs font-mono text-amber-400">90%</span>
+          </div>
+          <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="h-full gold-gradient-bg rounded-full" style="width: 90%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="py-24 relative border-t border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">Karya & Rekayasa</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-cinzel text-slate-100 mt-2">Silsilah Proyek Unggulan</h2>
+        <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1 -->
+        <div class="royal-glass rounded-3xl overflow-hidden border border-amber-500/20 group hover:border-amber-400/60 transition-all flex flex-col justify-between">
+          <div>
+            <div class="relative h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="E-Keraton POS System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-amber-400/40 text-xs font-bold text-amber-300">
+                Full-Stack
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold font-cinzel text-slate-100 group-hover:text-amber-300 transition-colors">E-Keraton POS & Inventory</h3>
+              <p class="text-slate-300 text-sm mt-2 leading-relaxed">System Kasir & Manajemen Stok Terintegrasi berbasis Web dengan analitik penjualan real-time.</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/5 border border-white/10 text-slate-300">React</span>
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/5 border border-white/10 text-slate-300">Node.js</span>
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/5 border border-white/10 text-slate-300">MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="royal-glass rounded-3xl overflow-hidden border border-amber-500/20 group hover:border-amber-400/60 transition-all flex flex-col justify-between">
+          <div>
+            <div class="relative h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800" alt="Royal LMS School Portal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-amber-400/40 text-xs font-bold text-amber-300">
+                Web App
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold font-cinzel text-slate-100 group-hover:text-amber-300 transition-colors">Royal LMS & School Portal</h3>
+              <p class="text-slate-300 text-sm mt-2 leading-relaxed">Sistem Informasi Akademik dan Portal Belajar Online dengan manajemen tugas dan rekap absensi.</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/5 border border-white/10 text-slate-300">TypeScript</span>
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/5 border border-white/10 text-slate-300">Tailwind</span>
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/5 border border-white/10 text-slate-300">Express</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="royal-glass rounded-3xl overflow-hidden border border-amber-500/20 group hover:border-amber-400/60 transition-all flex flex-col justify-between">
+          <div>
+            <div class="relative h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" alt="Imperial AI Copilot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-amber-400/40 text-xs font-bold text-amber-300">
+                AI & API
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold font-cinzel text-slate-100 group-hover:text-amber-300 transition-colors">Imperial AI Code Assistant</h3>
+              <p class="text-slate-300 text-sm mt-2 leading-relaxed">Asisten AI pintar ditenagai Gemini API untuk analisis kode otomatis dan saran arsitektur.</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/5 border border-white/10 text-slate-300">Gemini API</span>
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/5 border border-white/10 text-slate-300">React</span>
+                <span class="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-white/5 border border-white/10 text-slate-300">Node</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-24 relative border-t border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">Pesan Utusan</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-cinzel text-slate-100 mt-2">Hubungi Pengembang Kerajaan</h2>
+        <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5 royal-glass p-8 rounded-3xl border border-amber-500/20 space-y-6">
+          <h3 class="text-2xl font-bold font-cinzel text-amber-300">Informasi Kontak</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Terbuka untuk diskusi proyek web, tawaran magang/PKL SMK RPL, serta kolaborasi pengembangan sistem software.
+          </p>
+
+          <div class="space-y-4 pt-4 border-t border-white/10">
+            <div class="flex items-center gap-3 text-sm">
+              <span class="text-amber-400">📧</span>
+              <span>auraroyal.dev@gmail.com</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <span class="text-amber-400">📱</span>
+              <span>+62 812-3456-7890</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <span class="text-amber-400">📍</span>
+              <span>Indonesia (Siap Remote / Onsite)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 royal-glass p-8 rounded-3xl border border-amber-500/20">
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Lengkap Anda</label>
+              <input type="text" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-amber-500/30 text-slate-100 focus:outline-none focus:border-amber-400 text-sm" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Email Kontak</label>
+              <input type="email" required placeholder="nama@perusahaan.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-amber-500/30 text-slate-100 focus:outline-none focus:border-amber-400 text-sm" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Pesan / Penawaran Project</label>
+              <textarea rows="4" required placeholder="Tuliskan detail pesan atau undangan PKL..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-amber-500/30 text-slate-100 focus:outline-none focus:border-amber-400 text-sm"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 text-black hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+              Kirim Pesan Kerajaan 👑
+            </button>
+            <p id="form-status" class="text-xs text-emerald-400 text-center hidden">Pesan berhasil terkirim! Terima kasih telah menghubungi.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-amber-500/20 bg-[#050508] text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+      <div class="flex items-center justify-center gap-2">
+        <span class="text-amber-400 font-bold font-cinzel text-base">MY PORTOFOLIO</span>
+        <span>•</span>
+        <span>Siswa RPL SMK</span>
+      </div>
+      <p>© 2026 mas taqii_. Dibuat dengan HTML, CSS, & Pure JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

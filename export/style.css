@@ -1,0 +1,417 @@
+/* Pure CSS for Standalone Export Portfolio */
+
+:root {
+  --gold-start: #fef08a;
+  --gold-mid: #eab308;
+  --gold-end: #d97706;
+}
+
+/* Custom Gold Gradient Text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fffbeb 0%, #fde047 25%, #eab308 50%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Gold Background Gradient */
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #fef08a 0%, #facc15 40%, #eab308 70%, #ca8a04 100%);
+}
+
+/* Royal Glassmorphism Container */
+.royal-glass {
+  background: rgba(13, 13, 20, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+    border-color: rgba(212, 175, 55, 0.8);
+  }
+}
+
+.animate-gold-pulse {
+  animation: goldPulse 3s infinite ease-in-out;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07070a;
+}
+::-webkit-scrollbar-thumb {
+  background: #332d16;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ca8a04;
+}
+/* ===============================
+   Animated Cursor Grid Background
+================================== */
+
+.grid-background{
+  position:absolute;
+  inset:0;
+
+  background-image:
+      linear-gradient(rgba(212,175,55,.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,175,55,.10) 1px, transparent 1px);
+
+  background-size:40px 40px;
+
+  mask-image:radial-gradient(circle at center,#000 55%,transparent 100%);
+  -webkit-mask-image:radial-gradient(circle at center,#000 55%,transparent 100%);
+}
+
+.cursor-glow{
+
+  position:absolute;
+
+  width:500px;
+  height:500px;
+
+  border-radius:50%;
+
+  pointer-events:none;
+
+  transform:translate(-50%,-50%);
+
+  background:
+  radial-gradient(circle,
+  rgba(255,215,0,.30) 0%,
+  rgba(255,193,7,.12) 35%,
+  rgba(255,193,7,.05) 55%,
+  transparent 75%);
+
+  filter:blur(45px);
+
+  transition:
+  left .06s linear,
+  top .06s linear;
+}
+
+.grid-background::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background-image:
+      linear-gradient(rgba(255,215,0,.35) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,215,0,.35) 1px, transparent 1px);
+
+  background-size:40px 40px;
+
+  opacity:.15;
+
+  mix-blend-mode:screen;
+
+  animation:gridMove 8s linear infinite;
+}
+
+@keyframes gridMove{
+
+  from{
+      transform:translate(0,0);
+  }
+
+  to{
+      transform:translate(40px,40px);
+  }
+
+}
+/* =====================================================
+   TILTED CARD
+===================================================== */
+
+.tilted-card{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  perspective:1200px;
+  position:relative;
+}
+
+.card{
+
+  position:relative;
+
+  width:360px;
+  height:460px;
+
+  border-radius:28px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  transform-style:preserve-3d;
+
+  transition:
+  transform .12s linear;
+
+  background:#111;
+
+  border:2px solid rgba(255,215,0,.25);
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.55),
+  0 0 35px rgba(255,200,0,.15);
+
+}
+
+.card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-2px;
+
+  border-radius:30px;
+
+  background:
+  linear-gradient(
+  135deg,
+  rgba(255,255,255,.25),
+  rgba(255,215,0,.18),
+  rgba(255,255,255,.05));
+
+  opacity:0;
+
+  transition:.35s;
+
+  z-index:5;
+
+}
+
+.card:hover::before{
+
+  opacity:1;
+
+}
+
+.card-image{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:
+  transform .35s ease;
+
+  user-select:none;
+
+  pointer-events:none;
+
+}
+
+.card:hover .card-image{
+
+  transform:scale(1.06);
+
+}
+
+.card-overlay{
+
+  position:absolute;
+
+  left:0;
+
+  right:0;
+
+  bottom:0;
+
+  padding:28px;
+
+  background:
+
+  linear-gradient(
+  to top,
+  rgba(0,0,0,.92),
+  rgba(0,0,0,.45),
+  transparent);
+
+  color:white;
+
+  transform:translateZ(60px);
+
+}
+
+.card-overlay h2{
+
+  font-size:28px;
+
+  margin-bottom:8px;
+
+  font-weight:700;
+
+}
+
+.card-overlay p{
+
+  color:#ffd54f;
+
+  font-size:15px;
+
+  letter-spacing:1px;
+
+}
+
+.tooltip{
+
+  position:absolute;
+
+  background:white;
+
+  color:#111;
+
+  padding:8px 14px;
+
+  border-radius:8px;
+
+  font-size:13px;
+
+  font-weight:600;
+
+  pointer-events:none;
+
+  opacity:0;
+
+  transform:translate(-50%,-50%);
+
+  transition:.2s;
+
+  z-index:100;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.card-glow{
+
+  position:absolute;
+
+  width:280px;
+
+  height:280px;
+
+  border-radius:50%;
+
+  background:
+
+  radial-gradient(
+  circle,
+  rgba(255,215,0,.35),
+  transparent 70%);
+
+  filter:blur(30px);
+
+  opacity:0;
+
+  transition:.3s;
+
+  pointer-events:none;
+
+}
+
+.card:hover + .tooltip{
+
+  opacity:1;
+
+}
+
+.card:hover{
+
+  box-shadow:
+
+  0 40px 80px rgba(0,0,0,.65),
+
+  0 0 60px rgba(255,200,0,.35);
+
+}
+
+.card::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+  linear-gradient(
+  120deg,
+
+  transparent 15%,
+
+  rgba(255,255,255,.18) 35%,
+
+  transparent 60%);
+
+  transform:translateX(-150%);
+
+}
+
+.card:hover::after{
+
+  animation:shine 1.2s linear;
+
+}
+
+@keyframes shine{
+
+  from{
+
+      transform:translateX(-150%);
+
+  }
+
+  to{
+
+      transform:translateX(180%);
+
+  }
+
+}
+
+@media(max-width:768px){
+
+.card{
+
+width:300px;
+
+height:390px;
+
+}
+
+.card-overlay h2{
+
+font-size:22px;
+
+}
+
+}

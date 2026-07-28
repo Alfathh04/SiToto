@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MY PORTOFOLIO | Software Engineer Portfolio (HTML, CSS & JS)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            outfit: ['Outfit', 'sans-serif'],
+            space: ['Space Grotesk', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[#07070a] text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-black min-h-screen overflow-x-hidden relative">
+
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div 
+      class="w-full h-full opacity-20"
+      style="
+        background-image: 
+          linear-gradient(to right, rgba(212, 175, 55, 0.2) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(212, 175, 55, 0.2) 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: radial-gradient(circle at 50% 30%, #000 60%, transparent 100%);
+        -webkit-mask-image: radial-gradient(circle at 50% 30%, #000 60%, transparent 100%);
+      "
+    ></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-amber-500/10 blur-[150px] rounded-full"></div>
+  </div>
+
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#07070a]/80 backdrop-blur-md border-b border-amber-500/20 py-4" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 flex items-center justify-center text-black font-bold text-lg shadow-[0_0_20px_rgba(212,175,55,0.4)] border border-amber-300">
+          👑
+        </div>
+        <div>
+          <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider gold-gradient-text block leading-none">
+            MY PORTOFOLIO
+          </span>
+          <span class="text-[10px] tracking-widest text-slate-400 font-mono uppercase block">
+            Aura Royal • RPL
+          </span>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#home" class="hover:text-amber-300 transition-colors">Beranda</a>
+        <a href="#about" class="hover:text-amber-300 transition-colors">Tentang</a>
+        <a href="#skills" class="hover:text-amber-300 transition-colors">Keahlian</a>
+        <a href="#projects" class="hover:text-amber-300 transition-colors">Portofolio</a>
+        <a href="#experience" class="hover:text-amber-300 transition-colors">Pengalaman</a>
+        <a href="#contact" class="hover:text-amber-300 transition-colors">Kontak</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 text-black hover:brightness-110">
+          Hubungi Utusan
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="min-h-screen pt-28 sm:pt-36 pb-20 flex flex-col justify-center relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-amber-500/10 via-yellow-500/20 to-amber-500/10 border-2 border-amber-400/40 text-amber-300 text-xs sm:text-sm font-semibold tracking-widest uppercase shadow-[0_0_25px_rgba(212,175,55,0.25)]">
+          <span>⚜️</span>
+          <span class="font-cinzel">KERATON SOFTWARE & REKAYASA</span>
+          <span>⚜️</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <div class="lg:col-span-7 order-2 lg:order-1 space-y-6 text-center lg:text-left">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400/90 mb-2 font-semibold">
+              👑 <span>MY PORTOFOLIO • SOFTWARE ENGINEER</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-100 font-cinzel leading-tight">
+              Salam, Saya <br />
+              <span class="gold-gradient-text drop-shadow-[0_4px_16px_rgba(212,175,55,0.4)]">
+                Aura Royal Putra
+              </span>
+            </h1>
+
+            <p class="text-lg sm:text-2xl font-space font-semibold text-amber-200/90 mt-2">
+              Siswa Rekayasa Perangkat Lunak (RPL) SMK
+            </p>
+          </div>
+
+          <div class="h-10 flex items-center justify-center lg:justify-start">
+            <span class="text-lg sm:text-xl font-mono text-amber-400 font-bold flex items-center gap-2 px-4 py-1.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+              ⚡ <span id="typewriter">Full-Stack Web Developer</span>
+              <span class="w-2 h-5 bg-amber-300 animate-pulse inline-block"></span>
+            </span>
+          </div>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
+            Pengembang perangkat lunak berdedikasi dengan fokus pada pengembangan Web Full-Stack modern, arsitektur REST API, database terstruktur, dan antarmuka berkinerja tinggi. Siap berkontribusi pada proyek industri dan Program Praktik Kerja Lapangan (PKL).
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#contact" class="px-8 py-3.5 rounded-full font-bold text-sm bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 text-black hover:brightness-110 shadow-[0_0_30px_rgba(212,175,55,0.45)]">
+              Unduh CV Imperial
+            </a>
+            <a href="#projects" class="px-7 py-3.5 rounded-full font-bold text-sm bg-white/5 border-2 border-amber-500/40 text-slate-100 hover:text-amber-300">
+              Silsilah Project
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT PHOTO FRAME WITH GRADIENT VIGNETTE -->
+        <div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
+          <div class="relative group max-w-sm sm:max-w-md w-full">
+            <div class="absolute -inset-2 bg-gradient-to-tr from-amber-600 via-yellow-400 to-amber-700 rounded-3xl blur-2xl opacity-50"></div>
+
+            <div class="relative royal-glass p-4 sm:p-5 rounded-3xl border-2 border-amber-400/60 shadow-[0_0_50px_rgba(212,175,55,0.3)] bg-[#0c0c14]/90">
+              
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-black font-extrabold text-xs shadow-xl flex items-center gap-1.5 z-20 border border-yellow-200">
+                <span>👑</span>
+                <span class="font-cinzel tracking-widest">ROYAL CRAFTSMAN</span>
+              </div>
+
+              <div class="relative aspect-[4/5] rounded-2xl overflow-hidden border-2 border-amber-400/40 bg-gradient-to-b from-[#12121a] to-[#070709] shadow-[inset_0_0_40px_rgba(212,175,55,0.35)]">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800"
+                  alt="Aura Royal Putra"
+                  class="w-full h-full object-cover object-center filter brightness-105 contrast-105"
+                />
+
+                <div class="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-amber-500/15 pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-amber-500/20 via-transparent to-[#070709]/95 pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#070709]/40 via-transparent to-[#070709]/40 pointer-events-none"></div>
+                <div class="absolute inset-0 shadow-[inset_0_0_50px_rgba(212,175,55,0.45)] pointer-events-none"></div>
+
+                <div class="absolute bottom-3 left-3 right-3 bg-[#0a0a0f]/90 backdrop-blur-md p-3.5 rounded-xl border border-amber-400/40 flex items-center justify-between shadow-lg">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    <div>
+                      <span class="text-xs font-bold text-slate-100 block leading-none">Ready for Work / PKL</span>
+                      <span class="text-[10px] text-amber-300/80 font-mono">Software Engineer RPL</span>
+                    </div>
+                  </div>
+                  <span class="text-xs font-bold font-mono text-amber-300 px-2.5 py-1 rounded-lg bg-amber-500/20 border border-amber-400/40">
+                    ⚜️ Kerajaan
+                  </span>
+                </div>
+              </div>
+
+              <div class="absolute top-2 left-2 text-amber-400/80 text-sm select-none">⚜️</div>
+              <div class="absolute top-2 right-2 text-amber-400/80 text-sm select-none">⚜️</div>
+              <div class="absolute bottom-2 left-2 text-amber-400/80 text-sm select-none">⚜️</div>
+              <div class="absolute bottom-2 right-2 text-amber-400/80 text-sm select-none">⚜️</div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 border-t border-amber-500/20 bg-[#050508] text-slate-400 text-xs text-center">
+    <p>© 2026 MY PORTOFOLIO • Pure HTML, CSS & JavaScript Export</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

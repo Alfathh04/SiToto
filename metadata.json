@@ -1,0 +1,6 @@
+{
+  "name": "MY PORTOFOLIO",
+  "description": "An ultra-modern portfolio for software engineers, featuring interactive glassmorphism, project showcase, skill matrix, interactive timeline, and AI profile generator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

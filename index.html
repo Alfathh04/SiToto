@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MY PORTOFOLIO | Taqi Alfaht - Software Engineer RPL</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN for instant styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            outfit: ['Outfit', 'sans-serif'],
+            space: ['Space Grotesk', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="bg-[#07070a] text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-black min-h-screen overflow-x-hidden relative">
+
+  <!-- Particle / Square Grid Background -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div 
+      class="w-full h-full opacity-20"
+      style="
+        background-image: 
+          linear-gradient(to right, rgba(212, 175, 55, 0.2) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(212, 175, 55, 0.2) 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: radial-gradient(circle at 50% 30%, #000 60%, transparent 100%);
+        -webkit-mask-image: radial-gradient(circle at 50% 30%, #000 60%, transparent 100%);
+      "
+    ></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-amber-500/10 blur-[150px] rounded-full"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#07070a]/85 backdrop-blur-md border-b border-amber-500/20 py-3.5" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 flex items-center justify-center text-black font-bold text-lg shadow-[0_0_20px_rgba(212,175,55,0.4)] border border-amber-300 transition-transform group-hover:scale-105">
+          👑
+        </div>
+        <div>
+          <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider gold-gradient-text block leading-none" id="nav-logo-name">
+            MY PORTOFOLIO
+          </span>
+          <span class="text-[10px] tracking-widest text-slate-400 font-mono uppercase block mt-0.5" id="nav-logo-tag">
+            Aura Royal • Software Engineer RPL
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#home" class="hover:text-amber-300 transition-colors">Beranda</a>
+        <a href="#about" class="hover:text-amber-300 transition-colors">Tentang</a>
+        <a href="#skills" class="hover:text-amber-300 transition-colors">Keahlian</a>
+        <a href="#projects" class="hover:text-amber-300 transition-colors">Portofolio</a>
+        <a href="#experience" class="hover:text-amber-300 transition-colors">Pengalaman</a>
+        <a href="#certificates" class="hover:text-amber-300 transition-colors">Sertifikat</a>
+        <a href="#contact" class="hover:text-amber-300 transition-colors">Kontak</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="open-customizer-btn" class="flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full text-xs font-semibold bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 text-amber-300 transition-all shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+          <span>⚙️</span>
+          <span class="hidden sm:inline">Studio Customizer</span>
+        </button>
+
+        <button id="open-ai-copilot-btn" class="flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full text-xs font-bold bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 text-black hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.35)]">
+          <span>🤖</span>
+          <span>AI Copilot</span>
+        </button>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-white/5 border border-amber-500/30 text-amber-300">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0f] border-b border-amber-500/20 px-6 py-4 space-y-3 font-medium">
+      <a href="#home" class="block py-1 text-slate-200 hover:text-amber-300">Beranda</a>
+      <a href="#about" class="block py-1 text-slate-200 hover:text-amber-300">Tentang Saya</a>
+      <a href="#skills" class="block py-1 text-slate-200 hover:text-amber-300">Keahlian RPL</a>
+      <a href="#projects" class="block py-1 text-slate-200 hover:text-amber-300">Portofolio Proyek</a>
+      <a href="#experience" class="block py-1 text-slate-200 hover:text-amber-300">Pengalaman & Rekam Jejak</a>
+      <a href="#certificates" class="block py-1 text-slate-200 hover:text-amber-300">Sertifikat & Lisensi</a>
+      <a href="#contact" class="block py-1 text-slate-200 hover:text-amber-300">Kontak Utusan</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="min-h-screen pt-28 sm:pt-36 pb-20 flex flex-col justify-center relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      
+      <!-- Top Royal Crest Banner -->
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-amber-500/10 via-yellow-500/20 to-amber-500/10 border-2 border-amber-400/40 text-amber-300 text-xs sm:text-sm font-semibold tracking-widest uppercase shadow-[0_0_25px_rgba(212,175,55,0.25)] animate-pulse" id="hero-badge">
+          <span>⚜️</span>
+          <span class="font-cinzel">ROYAL KINGDOM EDITION • SOFTWARE ENGINEER RPL</span>
+          <span>⚜️</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- LEFT TEXT CONTENT -->
+        <div class="lg:col-span-7 order-2 lg:order-1 space-y-6 text-center lg:text-left">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400/90 mb-2 font-semibold">
+              👑 <span>MY PORTOFOLIO • SOFTWARE ENGINEER</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-100 font-cinzel leading-tight">
+              Salam, Saya <br />
+              <span class="gold-gradient-text drop-shadow-[0_4px_16px_rgba(212,175,55,0.4)]" id="hero-name">
+                Taqi Alfaht
+              </span>
+            </h1>
+
+            <p class="text-lg sm:text-2xl font-space font-semibold text-amber-200/90 mt-2" id="hero-title">
+              Future Software Engineer • Siswa RPL SMK
+            </p>
+          </div>
+
+          <!-- Typewriter Effect -->
+          <div class="h-10 flex items-center justify-center lg:justify-start">
+            <span class="text-lg sm:text-xl font-mono text-amber-400 font-bold flex items-center gap-2 px-4 py-1.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+              ⚡ <span id="typewriter">Full-Stack Web Developer</span>
+              <span class="w-2 h-5 bg-amber-300 animate-pulse inline-block"></span>
+            </span>
+          </div>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light" id="hero-bio">
+            Saya merupakan siswa SMK jurusan Rekayasa Perangkat Lunak (RPL) dengan passion mendalam dalam membangun aplikasi web modern, sistem backend terstruktur, dan antarmuka pengguna bergaya luxury modern.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#contact" class="px-8 py-3.5 rounded-full font-bold text-sm bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 text-black hover:brightness-110 transition-all shadow-[0_0_30px_rgba(212,175,55,0.45)] flex items-center gap-2.5">
+              <span>Unduh CV Imperial</span>
+              <span>📄</span>
+            </a>
+            <a href="#projects" class="px-7 py-3.5 rounded-full font-bold text-sm bg-white/5 border-2 border-amber-500/40 text-slate-100 hover:text-amber-300 hover:bg-amber-500/15 transition-all">
+              <span>Silsilah Project</span>
+            </a>
+            <a href="#contact" class="px-6 py-3.5 rounded-full font-bold text-sm bg-white/5 border border-white/10 text-slate-300 hover:text-white transition-all">
+              <span>Kontak Utusan</span>
+            </a>
+          </div>
+
+          <!-- Quick Stats Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-6 border-t border-amber-500/20" id="stats-grid">
+            <div class="royal-glass p-3.5 rounded-2xl text-center border border-amber-500/20">
+              <span class="text-2xl sm:text-3xl font-bold font-space gold-gradient-text block" id="stat-proj">15+</span>
+              <span class="text-[11px] text-slate-400 font-medium uppercase tracking-wider block mt-0.5">Karya Project</span>
+            </div>
+            <div class="royal-glass p-3.5 rounded-2xl text-center border border-amber-500/20">
+              <span class="text-2xl sm:text-3xl font-bold font-space gold-gradient-text block" id="stat-skills">12+</span>
+              <span class="text-[11px] text-slate-400 font-medium uppercase tracking-wider block mt-0.5">Keahlian RPL</span>
+            </div>
+            <div class="royal-glass p-3.5 rounded-2xl text-center border border-amber-500/20">
+              <span class="text-2xl sm:text-3xl font-bold font-space gold-gradient-text block" id="stat-cert">8</span>
+              <span class="text-[11px] text-slate-400 font-medium uppercase tracking-wider block mt-0.5">Sertifikat</span>
+            </div>
+            <div class="royal-glass p-3.5 rounded-2xl text-center border border-amber-500/20">
+              <span class="text-2xl sm:text-3xl font-bold font-space gold-gradient-text block" id="stat-exp">3 Th</span>
+              <span class="text-[11px] text-slate-400 font-medium uppercase tracking-wider block mt-0.5">Rekam Jejak</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: TILTED CARD -->
+<div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
+  <div class="tilted-card">
+
+    <div class="card">
+
+      <img
+        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=900"
+        alt="Muhammad Taqiyuddin"
+        class="card-image"
+      />
+
+      <div class="card-overlay">
+        <h2>Muhammad Taqiyuddin</h2>
+        <p>Software Engineer • RPL</p>
+      </div>
+
+    </div>
+
+    <div class="tooltip">
+      Muhammad Taqiyuddin
+    </div>
+
+  </div>
+</div>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-24 relative border-t border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">Aura Royal Biography</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-cinzel text-slate-100 mt-2" id="about-header">Tentang Pengembang Kerajaan</h2>
+        <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="royal-glass p-8 rounded-3xl border border-amber-500/20 hover:border-amber-400/50 transition-all">
+          <div class="text-3xl mb-4">🏛️</div>
+          <h3 class="text-xl font-bold font-cinzel text-amber-300 mb-2">Pendidikan RPL SMK</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Menempuh pendidikan keahlian Rekayasa Perangkat Lunak di SMK dengan fokus utama pada pemrograman web modern, struktur data, dan rekayasa lunak standar industri.
+          </p>
+        </div>
+
+        <div class="royal-glass p-8 rounded-3xl border border-amber-500/20 hover:border-amber-400/50 transition-all">
+          <div class="text-3xl mb-4">💻</div>
+          <h3 class="text-xl font-bold font-cinzel text-amber-300 mb-2">Stack & Teknologi</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Terbiasa menggunakan React, TypeScript, Tailwind CSS, Node.js, Express, PHP/Laravel, MySQL/PostgreSQL, serta integrasi REST API & AI Gemini.
+          </p>
+        </div>
+
+        <div class="royal-glass p-8 rounded-3xl border border-amber-500/20 hover:border-amber-400/50 transition-all">
+          <div class="text-3xl mb-4">⚔️</div>
+          <h3 class="text-xl font-bold font-cinzel text-amber-300 mb-2">Visi & Komitmen</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Berkomitmen menciptakan produk digital yang presisi, berkinerja tinggi, dan ramah pengguna, siap ditempatkan untuk proyek tim mapan maupun magang PKL.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="py-24 relative border-t border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">Armada Teknologi</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-cinzel text-slate-100 mt-2">Matriks Keahlian & Spesialisasi</h2>
+        <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Skills Category Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10" id="skill-filters">
+        <button data-cat="all" class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">Semua</button>
+        <button data-cat="frontend" class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-slate-300 hover:text-amber-300">Frontend</button>
+        <button data-cat="backend" class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-slate-300 hover:text-amber-300">Backend</button>
+        <button data-cat="database" class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-slate-300 hover:text-amber-300">Database</button>
+        <button data-cat="tools" class="skill-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-slate-300 hover:text-amber-300">Tools & DevOps</button>
+      </div>
+
+      <!-- Skills Grid Container -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-container">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="py-24 relative border-t border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">Karya & Rekayasa</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-cinzel text-slate-100 mt-2">Silsilah Proyek Unggulan</h2>
+        <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Project Category Filters -->
+      <div class="flex flex-wrap justify-center gap-2 mb-12" id="project-filters">
+        <button data-cat="all" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">Semua Proyek</button>
+        <button data-cat="website" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-slate-300 hover:text-amber-300">Website & SPA</button>
+        <button data-cat="dashboard" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-slate-300 hover:text-amber-300">Dashboard & Admin</button>
+        <button data-cat="fullstack" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white/5 text-slate-300 hover:text-amber-300">Full-Stack</button>
+      </div>
+
+      <!-- Projects Grid Container -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="py-24 relative border-t border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">Jejak Langkah RPL</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-cinzel text-slate-100 mt-2">Pengalaman & Rekam Jejak</h2>
+        <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="space-y-8 max-w-4xl mx-auto" id="experience-container">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES SECTION -->
+  <section id="certificates" class="py-24 relative border-t border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">Pengakuan Kompetensi</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-cinzel text-slate-100 mt-2">Sertifikat & Lisensi</h2>
+        <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="certificates-container">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-24 relative border-t border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest font-bold">Pesan Utusan</span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-cinzel text-slate-100 mt-2">Hubungi Pengembang Kerajaan</h2>
+        <div class="w-20 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5 royal-glass p-8 rounded-3xl border border-amber-500/20 space-y-6">
+          <h3 class="text-2xl font-bold font-cinzel text-amber-300">Informasi Kontak</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Terbuka untuk diskusi proyek web, tawaran magang/PKL SMK RPL, serta kolaborasi pengembangan sistem software.
+          </p>
+
+          <div class="space-y-4 pt-4 border-t border-white/10">
+            <div class="flex items-center gap-3 text-sm">
+              <span class="text-amber-400 text-lg">📧</span>
+              <span id="contact-email">taqialfahtt29@gmail.com</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <span class="text-amber-400 text-lg">💬</span>
+              <span id="contact-wa">+62 812-3456-7890</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <span class="text-amber-400 text-lg">📍</span>
+              <span>Indonesia (Siap Remote / Onsite)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 royal-glass p-8 rounded-3xl border border-amber-500/20">
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Lengkap Anda</label>
+              <input type="text" id="form-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-amber-500/30 text-slate-100 focus:outline-none focus:border-amber-400 text-sm" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Email Kontak</label>
+              <input type="email" id="form-email" required placeholder="nama@perusahaan.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-amber-500/30 text-slate-100 focus:outline-none focus:border-amber-400 text-sm" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Pesan / Penawaran Project</label>
+              <textarea id="form-message" rows="4" required placeholder="Tuliskan detail pesan atau undangan PKL..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-amber-500/30 text-slate-100 focus:outline-none focus:border-amber-400 text-sm"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 text-black hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+              Kirim Pesan Kerajaan 👑
+            </button>
+            <p id="form-status" class="text-xs text-emerald-400 text-center hidden">Pesan berhasil terkirim! Terima kasih telah menghubungi.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-amber-500/20 bg-[#050508] text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+      <div class="flex items-center justify-center gap-2">
+        <span class="text-amber-400 font-bold font-cinzel text-base" id="footer-name">MY PORTOFOLIO</span>
+        <span>•</span>
+        <span>Siswa RPL SMK</span>
+      </div>
+      <p>© 2026 Taqi Alfaht. Dibuat Murni Dengan HTML5, CSS3, & Pure JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+
+  <!-- 1. AI Copilot Chat Modal -->
+  <div id="ai-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="w-full max-w-lg royal-glass rounded-3xl border border-amber-400/50 p-6 flex flex-col h-[520px] shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-amber-500/20">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-amber-500 text-black flex items-center justify-center font-bold">🤖</div>
+          <div>
+            <h3 class="font-bold text-amber-300 font-cinzel text-base">Aura Royal Copilot</h3>
+            <span class="text-[10px] text-emerald-400 font-mono">● Online • Gemini AI Powered</span>
+          </div>
+        </div>
+        <button id="close-ai-modal-btn" class="p-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">✕</button>
+      </div>
+
+      <div id="ai-chat-messages" class="flex-1 overflow-y-auto my-4 space-y-3 pr-2 text-xs">
+        <div class="bg-amber-500/10 border border-amber-500/20 text-slate-200 p-3 rounded-2xl max-w-[85%]">
+          Salam! Saya Asisten AI Resmi untuk Taqi Alfaht. Ada yang bisa saya bantu terkait skill, proyek, atau kontak sang pengembang?
+        </div>
+      </div>
+
+      <form id="ai-chat-form" class="flex gap-2 pt-2 border-t border-amber-500/20">
+        <input type="text" id="ai-input" placeholder="Tanyakan seputar skill atau proyek..." class="flex-1 px-4 py-2.5 rounded-xl bg-slate-900 border border-amber-500/30 text-xs text-slate-100 focus:outline-none focus:border-amber-400" />
+        <button type="submit" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-600 text-black font-bold text-xs">Kirim</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Studio Customizer Modal -->
+  <div id="customizer-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="w-full max-w-2xl royal-glass rounded-3xl border border-amber-400/50 p-6 max-h-[85vh] flex flex-col shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-amber-500/20">
+        <div class="flex items-center gap-2.5">
+          <span class="text-xl">⚙️</span>
+          <div>
+            <h3 class="font-bold text-amber-300 font-cinzel text-lg">Studio Customizer Portofolio</h3>
+            <span class="text-[10px] text-slate-400">Edit Nama, Bio, Foto, & Ekspor Kode Pure HTML</span>
+          </div>
+        </div>
+        <button id="close-customizer-modal-btn" class="p-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">✕</button>
+      </div>
+
+      <div class="flex border-b border-white/10 mt-4 mb-4 gap-2 text-xs">
+        <button id="cust-tab-profile" class="px-3 py-2 font-bold text-amber-300 border-b-2 border-amber-400">Profil Utama</button>
+        <button id="cust-tab-export" class="px-3 py-2 font-bold text-slate-400 hover:text-amber-300">Ekspor HTML/CSS/JS</button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto space-y-4 pr-2 text-xs">
+        <!-- Profile Tab Panel -->
+        <div id="cust-panel-profile" class="space-y-4">
+          <div>
+            <label class="block font-bold text-slate-300 mb-1">Nama Lengkap Developer</label>
+            <input type="text" id="cust-name" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-amber-500/30 text-slate-100" />
+          </div>
+
+          <div>
+            <label class="block font-bold text-slate-300 mb-1">Sub Title / Jabatan</label>
+            <input type="text" id="cust-title" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-amber-500/30 text-slate-100" />
+          </div>
+
+          <div>
+            <label class="block font-bold text-slate-300 mb-1">Ringkasan Bio / Tentang Saya</label>
+            <textarea id="cust-bio" rows="3" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-amber-500/30 text-slate-100"></textarea>
+          </div>
+
+          <div>
+            <label class="block font-bold text-slate-300 mb-1">URL Foto Profil (Avatar)</label>
+            <input type="text" id="cust-avatar" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-amber-500/30 text-slate-100" />
+          </div>
+
+          <button id="save-cust-profile-btn" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 text-black font-bold text-xs shadow-lg">
+            Simpan Perubahan Live
+          </button>
+        </div>
+
+        <!-- Export Tab Panel -->
+        <div id="cust-panel-export" class="hidden space-y-4">
+          <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-200">
+            <h4 class="font-bold text-sm mb-1">Unduh Berkas Statis Murni (HTML, CSS, JS)</h4>
+            <p class="text-[11px] text-emerald-300/80">
+              Berkas ini ditulis murni tanpa dependensi bundler atau framework, langsung dapat digunakan di hosting manapun!
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button id="download-html-btn" class="p-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-600 text-black font-bold flex items-center justify-between">
+              <span>📄 Unduh index.html</span>
+              <span class="text-[10px] font-mono bg-black/20 px-2 py-0.5 rounded">HTML5</span>
+            </button>
+
+            <button id="download-css-btn" class="p-3 rounded-xl bg-white/10 border border-white/20 text-slate-100 font-bold flex items-center justify-between">
+              <span>🎨 Unduh style.css</span>
+              <span class="text-[10px] font-mono bg-white/10 px-2 py-0.5 rounded">CSS3</span>
+            </button>
+
+            <button id="download-js-btn" class="p-3 rounded-xl bg-white/10 border border-white/20 text-slate-100 font-bold flex items-center justify-between">
+              <span>⚡ Unduh script.js</span>
+              <span class="text-[10px] font-mono bg-white/10 px-2 py-0.5 rounded">JS</span>
+            </button>
+
+            <a href="/export/standalone-portfolio.html" target="_blank" class="p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-200 font-bold flex items-center justify-between">
+              <span>🌐 Standalone Preview</span>
+              <span class="text-[10px] font-mono bg-emerald-500/30 px-2 py-0.5 rounded">Browser</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Project Detail Modal -->
+  <div id="project-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="w-full max-w-xl royal-glass rounded-3xl border border-amber-400/50 p-6 flex flex-col shadow-2xl max-h-[85vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-amber-500/20">
+        <h3 id="modal-proj-title" class="font-bold text-amber-300 font-cinzel text-xl">Detail Proyek</h3>
+        <button id="close-project-modal-btn" class="p-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">✕</button>
+      </div>
+
+      <div class="mt-4 space-y-4 text-xs">
+        <img id="modal-proj-img" class="w-full h-48 object-cover rounded-2xl border border-amber-500/30" src="" alt="Project" />
+        <p id="modal-proj-desc" class="text-slate-300 text-sm leading-relaxed"></p>
+        
+        <div>
+          <h4 class="font-bold text-amber-300 mb-2">Fitur Utama:</h4>
+          <ul id="modal-proj-features" class="list-disc list-inside space-y-1 text-slate-300"></ul>
+        </div>
+
+        <div class="pt-4 border-t border-white/10 flex gap-3">
+          <a id="modal-proj-github" href="#" target="_blank" class="px-4 py-2 rounded-xl bg-white/10 border border-white/20 text-slate-100 font-bold">GitHub Code</a>
+          <a id="modal-proj-demo" href="#" target="_blank" class="px-4 py-2 rounded-xl bg-amber-500 text-black font-bold">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="/script.js"></script>
+</body>
+</html>
